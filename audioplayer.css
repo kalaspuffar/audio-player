@@ -1,0 +1,32 @@
+html, body {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.audio-player-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 30px;
+}
+
+.audio-player-progressbar {
+  background-color: purple;
+  width: 300px;
+  height: 30px;
+}
+
+.audio-player-progressmeter {
+  background-color: hotpink;
+  height: 30px;
+}
+
+.audio-player {
+  display: flex;
+  flex-direction: row;
+}
