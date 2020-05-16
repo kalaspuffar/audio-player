@@ -20,6 +20,11 @@ function createAudioPlayer() {
     audioPlayer.pause();
   }
 
+  function stop() {
+    audioPlayer.pause();
+    audioPlayer.currentTime = 0;
+  }
+
   function seeking(e) {
     var percent = e.offsetX / progressbarWidth;
     audioPlayer.currentTime = percent * audioPlayer.duration;
@@ -80,6 +85,11 @@ function createAudioPlayer() {
     });
     audioPlayer.src = trackList[currentTrack].src;
 
+    var stopButton = document.createElement('button');
+    stopButton.innerHTML = '<i class="fa fa-stop" aria-hidden="true"></i>';
+    stopButton.ariaLabel = 'Stop';
+    stopButton.onclick = stop;
+
     var playButton = document.createElement('button');
     playButton.innerHTML = '<i class="fa fa-play" aria-hidden="true"></i>';
     playButton.ariaLabel = 'Play';
@@ -110,6 +120,7 @@ function createAudioPlayer() {
 
     playerElement.innerHTML = '';
     playerElement.append(previousButton);
+    playerElement.append(stopButton);
     playerElement.append(playButton);
     playerElement.append(pauseButton);
     playerElement.append(informationDiv);
